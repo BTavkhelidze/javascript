@@ -90,7 +90,8 @@
 //       console.log('increase', num);
 //     },
 //     reset: function () {
-//       console.log(num);
+//
+//        console.log(num);
 //       num = 0;
 //       console.log('reset');
 //     },
@@ -105,3 +106,77 @@
 
 // result.reset();
 // result.increase();
+
+//! task 7
+// function romanToInt(s) {
+//   const roman = {
+//     I: 1,
+//     V: 5,
+//     X: 10,
+//     L: 50,
+//     C: 100,
+//     D: 500,
+//     M: 1000,
+//   };
+
+//   let result = 0;
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (i < s.length - 1 && roman[s[i]] < roman[s[i + 1]]) {
+//       result -= roman[s[i]];
+//     } else {
+//       result += roman[s[i]];
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(romanToInt('III')); // 3
+// console.log(romanToInt('LVIII')); // 58
+// console.log(romanToInt('MCMXCIV')); // 1994
+
+//! task 8
+
+// const taxRate = 0.3;
+// const phonePrice = 900;
+// const spendingTrashold = 1300;
+// const bankAccountBalance = Number(prompt('what is bank acount'));
+
+// function price() {
+//   const tax = phonePrice * taxRate;
+//   const total = phonePrice + tax;
+//   console.log(total);
+//   if (bankAccountBalance > total && total < spendingTrashold) {
+//     console.log('You can buy the phone');
+//     return;
+//   }
+
+//   console.log('You can not buy the phone');
+// }
+
+// price();
+
+//! task 9
+
+function composition(fn, x) {
+  if (fn.length < 1) return console.log(x, 'empty');
+
+  // let res = 0;
+  // for (let i = +fn.length - 1; i >= 0; i--) {
+  //   if (i == fn.length - 1) {
+  //     res += fn[i](x);
+  //     console.log(res);
+  //   } else {
+  //     res = fn[i](res);
+  //     console.log(res);
+  //   }
+  // }
+  // console.log(res, 'final');
+  const res = fn.reduceRight((acc, func) => func(acc), x);
+  console.log(res, 'final');
+}
+
+composition([(x) => x + 1, (x) => x * x, (x) => 2 * x], 4);
+composition([(x) => 10 * x, (x) => 10 * x, (x) => 10 * x], 1);
+composition([], 42);
