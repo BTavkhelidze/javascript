@@ -159,24 +159,49 @@
 
 //! task 9
 
-function composition(fn, x) {
-  if (fn.length < 1) return console.log(x, 'empty');
+// function composition(fn, x) {
+//   if (fn.length < 1) return console.log(x, 'empty');
 
-  // let res = 0;
-  // for (let i = +fn.length - 1; i >= 0; i--) {
-  //   if (i == fn.length - 1) {
-  //     res += fn[i](x);
-  //     console.log(res);
-  //   } else {
-  //     res = fn[i](res);
-  //     console.log(res);
-  //   }
-  // }
-  // console.log(res, 'final');
-  const res = fn.reduceRight((acc, func) => func(acc), x);
-  console.log(res, 'final');
+//   // let res = 0;
+//   // for (let i = +fn.length - 1; i >= 0; i--) {
+//   //   if (i == fn.length - 1) {
+//   //     res += fn[i](x);
+//   //     console.log(res);
+//   //   } else {
+//   //     res = fn[i](res);
+//   //     console.log(res);
+//   //   }
+//   // }
+//   // console.log(res, 'final');
+//   const res = fn.reduceRight((acc, func) => func(acc), x);
+//   console.log(res, 'final');
+// }
+
+// composition([(x) => x + 1, (x) => x * x, (x) => 2 * x], 4);
+// composition([(x) => 10 * x, (x) => 10 * x, (x) => 10 * x], 1);
+// composition([], 42);
+
+//! task 10
+
+function filteredArray(arr, fn) {
+  const res = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+    }
+    if (fn(arr[i], i)) {
+      res.push(arr[i]);
+    }
+  }
+  console.log(res);
 }
 
-composition([(x) => x + 1, (x) => x * x, (x) => 2 * x], 4);
-composition([(x) => 10 * x, (x) => 10 * x, (x) => 10 * x], 1);
-composition([], 42);
+filteredArray([0, 10, 20, 30], function greaterThan10(n) {
+  return n > 10;
+});
+filteredArray([1, 2, 3], function firstIndex(n, i) {
+  return i === 0;
+});
+
+filteredArray([-2, -1, 0, 1, 2], function plusOne(n) {
+  return n + 1;
+});
