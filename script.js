@@ -183,25 +183,36 @@
 
 //! task 10
 
-function filteredArray(arr, fn) {
-  const res = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i]) {
-    }
-    if (fn(arr[i], i)) {
-      res.push(arr[i]);
-    }
-  }
-  console.log(res);
+// function filteredArray(arr, fn) {
+//   const res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i]) {
+//     }
+//     if (fn(arr[i], i)) {
+//       res.push(arr[i]);
+//     }
+//   }
+//   console.log(res);
+// }
+
+// filteredArray([0, 10, 20, 30], function greaterThan10(n) {
+//   return n > 10;
+// });
+// filteredArray([1, 2, 3], function firstIndex(n, i) {
+//   return i === 0;
+// });
+
+// filteredArray([-2, -1, 0, 1, 2], function plusOne(n) {
+//   return n + 1;
+// });
+
+//! task 11
+
+function circle(r) {
+  return (2 * Math.PI * r).toFixed(6);
 }
 
-filteredArray([0, 10, 20, 30], function greaterThan10(n) {
-  return n > 10;
-});
-filteredArray([1, 2, 3], function firstIndex(n, i) {
-  return i === 0;
-});
-
-filteredArray([-2, -1, 0, 1, 2], function plusOne(n) {
-  return n + 1;
-});
+console.log(circle(5));
+console.log(circle(10));
+console.log(circle(3));
+console.log(circle(16));
