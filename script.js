@@ -162,17 +162,17 @@
 // function composition(fn, x) {
 //   if (fn.length < 1) return console.log(x, 'empty');
 
-//   // let res = 0;
-//   // for (let i = +fn.length - 1; i >= 0; i--) {
-//   //   if (i == fn.length - 1) {
-//   //     res += fn[i](x);
-//   //     console.log(res);
-//   //   } else {
-//   //     res = fn[i](res);
-//   //     console.log(res);
-//   //   }
-//   // }
-//   // console.log(res, 'final');
+// let res = 0;
+// for (let i = +fn.length - 1; i >= 0; i--) {
+//   if (i == fn.length - 1) {
+//     res += fn[i](x);
+//     console.log(res);
+//   } else {
+//     res = fn[i](res);
+//     console.log(res);
+//   }
+// }
+// console.log(res, 'final');
 //   const res = fn.reduceRight((acc, func) => func(acc), x);
 //   console.log(res, 'final');
 // }
@@ -208,11 +208,38 @@
 
 //! task 11
 
-function circle(r) {
-  return (2 * Math.PI * r).toFixed(6);
-}
+// function circle(r) {
+//   return (2 * Math.PI * r).toFixed(6);
+// }
 
-console.log(circle(5));
-console.log(circle(10));
-console.log(circle(3));
-console.log(circle(16));
+// console.log(circle(5));
+// console.log(circle(10));
+// console.log(circle(3));
+// console.log(circle(16));
+
+//! task 12
+
+// function removeExclamationMarks(word) {
+//   return word.replace(/[?_]+$/, '');
+// }
+
+// console.log(removeExclamationMarks('Hi!????__'));
+// console.log(removeExclamationMarks('Hi!!!!!'));
+// console.log(removeExclamationMarks('!Hi!!!!!'));
+
+//! task 13
+
+const data1 = [3, 5, 2, 12, 7];
+const data2 = [9, 16, 6, 8, 3];
+
+const shalloCopy = data1.slice(1, -1);
+
+const concat = [...data1, ...data2];
+
+concat.forEach((el, i) => {
+  if (el > 3) {
+    console.log(`Dog ${1} is an adult `);
+    return;
+  }
+  console.log(`Dog ${i + 1} is a puppy `);
+});
