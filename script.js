@@ -246,15 +246,21 @@
 
 //! task 14
 
-const user = 'Steven Thomas Whilliams'; // stw
-const userName = user.slice().split(' ');
+const user = 'Steven Thomas Whilliams Beka'; // stw
+// const userName = user.slice().split(' ');
 
-function result(word) {
-  const newArr = [];
-  word.forEach((el) => {
-    newArr.push(el[0].toLowerCase());
-  });
-  return newArr.join('');
-}
+// function result(word) {
+//   const newArr = [];
+//   word.forEach((el) => {
+//     newArr.push(el[0].toLowerCase());
+//   });
+//   return newArr.join('');
+// }
 
-console.log(result(userName));
+// console.log(result(userName));
+const userName2 = user
+  .toLowerCase()
+  .split(' ')
+  .map((el) => el[0])
+  .join('');
+console.log(userName2);
