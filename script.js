@@ -229,17 +229,32 @@
 
 //! task 13
 
-const data1 = [3, 5, 2, 12, 7];
-const data2 = [9, 16, 6, 8, 3];
+// const data1 = [3, 5, 2, 12, 7];
+// const data2 = [9, 16, 6, 8, 3];
 
-const shalloCopy = data1.slice(1, -1);
+// const shalloCopy = data1.slice(1, -1);
 
-const concat = [...data1, ...data2];
+// const concat = [...data1, ...data2];
 
-concat.forEach((el, i) => {
-  if (el > 3) {
-    console.log(`Dog ${1} is an adult `);
-    return;
-  }
-  console.log(`Dog ${i + 1} is a puppy `);
-});
+// concat.forEach((el, i) => {
+//   if (el > 3) {
+//     console.log(`Dog ${1} is an adult `);
+//     return;
+//   }
+//   console.log(`Dog ${i + 1} is a puppy `);
+// });
+
+//! task 14
+
+const user = 'Steven Thomas Whilliams'; // stw
+const userName = user.slice().split(' ');
+
+function result(word) {
+  const newArr = [];
+  word.forEach((el) => {
+    newArr.push(el[0].toLowerCase());
+  });
+  return newArr.join('');
+}
+
+console.log(result(userName));
