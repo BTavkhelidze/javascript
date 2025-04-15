@@ -246,7 +246,7 @@
 
 //! task 14
 
-const user = 'Steven Thomas Whilliams Beka'; // stw
+// const user = 'Steven Thomas Whilliams Beka'; // stw
 // const userName = user.slice().split(' ');
 
 // function result(word) {
@@ -258,9 +258,54 @@ const user = 'Steven Thomas Whilliams Beka'; // stw
 // }
 
 // console.log(result(userName));
-const userName2 = user
-  .toLowerCase()
-  .split(' ')
-  .map((el) => el[0])
-  .join('');
-console.log(userName2);
+// const userName2 = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map((el) => el[0])
+//   .join('');
+// console.log(userName2);
+
+//! task 15
+
+// const arr1 = [1, 5, 3, 9];
+// const arr2 = [4, 2, 4, 3];
+
+// function calculate(arr, sum) {
+//   const res = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] + arr[i + 1] === sum) {
+//       res.push(arr[i], arr[i + 1]);
+//     }
+//   }
+//   if (res.length < 1) return 'no result';
+//   return res;
+// }
+
+// console.log(calculate(arr1, 8));
+// console.log(calculate(arr2, 8));
+
+//! task 15
+
+function createCounter(int) {
+  let num = int;
+
+  return {
+    increment: function () {
+      num++;
+      console.log(num);
+    },
+    decrement: function () {
+      num--;
+      console.log(num);
+    },
+    reset: function () {
+      num = int;
+      console.log(num);
+    },
+  };
+}
+
+const counter = createCounter(5);
+counter.increment();
+counter.reset();
+counter.decrement();
