@@ -286,26 +286,43 @@
 
 //! task 15
 
-function createCounter(int) {
-  let num = int;
+// function createCounter(int) {
+//   let num = int;
 
-  return {
-    increment: function () {
-      num++;
-      console.log(num);
-    },
-    decrement: function () {
-      num--;
-      console.log(num);
-    },
-    reset: function () {
-      num = int;
-      console.log(num);
-    },
-  };
-}
+//   return {
+//     increment: function () {
+//       num++;
+//       console.log(num);
+//     },
+//     decrement: function () {
+//       num--;
+//       console.log(num);
+//     },
+//     reset: function () {
+//       num = int;
+//       console.log(num);
+//     },
+//   };
+// }
 
-const counter = createCounter(5);
-counter.increment();
-counter.reset();
-counter.decrement();
+// const counter = createCounter(5);
+// counter.increment();
+// counter.reset();
+// counter.decrement();
+
+//! task 16
+
+const data1 = [5, 2, 4, 1, 15, 8, 3];
+const data2 = [16, 6, 10, 5, 6, 1, 4];
+
+const calcAverage = (arr1) => {
+  const humanAge = arr1.map((dog) => (dog <= 2 ? 2 * dog : 16 + dog * 4));
+
+  const adult = humanAge.filter((dog) => dog >= 18);
+
+  return adult.reduce((acc, cur) => acc + cur, 0) / adult.length;
+};
+
+const avg1 = calcAverage(data1);
+const avg2 = calcAverage(data2);
+console.log(avg1, avg2);
