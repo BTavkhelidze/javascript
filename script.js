@@ -312,17 +312,45 @@
 
 //! task 16
 
-const data1 = [5, 2, 4, 1, 15, 8, 3];
-const data2 = [16, 6, 10, 5, 6, 1, 4];
+// const data1 = [5, 2, 4, 1, 15, 8, 3];
+// const data2 = [16, 6, 10, 5, 6, 1, 4];
 
-const calcAverage = (arr1) => {
-  const humanAge = arr1.map((dog) => (dog <= 2 ? 2 * dog : 16 + dog * 4));
+// const calcAverage = (arr1) => {
+//   const humanAge = arr1.map((dog) => (dog <= 2 ? 2 * dog : 16 + dog * 4));
 
-  const adult = humanAge.filter((dog) => dog >= 18);
+//   const adult = humanAge.filter((dog) => dog >= 18);
 
-  return adult.reduce((acc, cur) => acc + cur, 0) / adult.length;
-};
+//   return adult.reduce((acc, cur) => acc + cur, 0) / adult.length;
+// };
 
-const avg1 = calcAverage(data1);
-const avg2 = calcAverage(data2);
-console.log(avg1, avg2);
+// const avg1 = calcAverage(data1);
+// const avg2 = calcAverage(data2);
+// console.log(avg1, avg2);
+
+// //! task 16
+
+// const data1 = [5, 2, 4, 1, 15, 8, 3];
+// const data2 = [16, 6, 10, 5, 6, 1, 4];
+
+// const calcAverage = (data) =>
+//   data
+//     .map((dog) => (dog <= 2 ? 2 * dog : 16 + dog * 4))
+//     .filter((dog) => dog >= 18)
+//     .reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
+
+// const avg1 = calcAverage(data1);
+// const avg2 = calcAverage(data2);
+// console.log(avg1, avg2);
+
+// //! task 17
+
+function createHelloWorld() {
+  return (data) => {
+    console.log('Hello World');
+  };
+}
+
+const f = createHelloWorld();
+f({}, null, 42);
+const y = createHelloWorld();
+y([]);
