@@ -344,13 +344,255 @@
 
 // //! task 17
 
-function createHelloWorld() {
-  return (data) => {
-    console.log('Hello World');
-  };
-}
+// function createHelloWorld() {
+//   return (data) => {
+//     console.log('Hello World');
+//   };
+// }
 
-const f = createHelloWorld();
-f({}, null, 42);
-const y = createHelloWorld();
-y([]);
+// const f = createHelloWorld();
+// f({}, null, 42);
+// const y = createHelloWorld();
+// y([]);
+
+//! task 18
+
+// import puppeteer from 'puppeteer';
+
+// async function getProductData() {
+//   let browser;
+//   try {
+//     // Launch browser with visible UI for debugging
+//     browser = await puppeteer.launch({ headless: false });
+//     const page = await browser.newPage();
+
+//     await page.setViewport({ width: 1280, height: 800 });
+//     page.setDefaultNavigationTimeout(60000);
+
+//     // Navigate to main page
+//     await page.goto('https://2nabiji.ge', {
+//       waitUntil: 'networkidle2',
+//     });
+
+//     // Strategy 1: Try clicking by text content (Georgian text)
+//     try {
+//       const [popLink] = await page.$x(
+//         "//a[contains(., 'პოპულარული') or contains(., 'პოპულარული პროდუქტები')]"
+//       );
+//       if (popLink) {
+//         await Promise.all([
+//           popLink.click(),
+//           page.waitForNavigation({ waitUntil: 'networkidle2' }),
+//         ]);
+//       } else {
+//         throw new Error('Link not found by text');
+//       }
+//     } catch (err) {
+//       console.log('Text click failed, trying alternative methods...');
+
+//       // Strategy 2: Try finding the link by partial href match
+//       const links = await page.$$eval('a', (anchors) =>
+//         anchors
+//           .map((a) => a.href)
+//           .find((h) => h.includes('67c8433a876e40c579c31647'))
+//       );
+
+//       if (links) {
+//         await page.goto(links, { waitUntil: 'networkidle2' });
+//       } else {
+//         // Strategy 3: Look for visual button (take screenshot to debug)
+//         await page.screenshot({ path: 'before-click.png' });
+//         const button = await page.$(
+//           '.popular-products-button, .btn-popular, .more-products'
+//         );
+//         if (button) {
+//           await button.click();
+//           await page.waitForNavigation({ waitUntil: 'networkidle2' });
+//         } else {
+//           throw new Error('Could not find popular products link');
+//         }
+//       }
+//     }
+
+//     // Wait for products to load (with multiple possible selectors)
+//     await page.waitForSelector(
+//       '.ProductCard_container__7IE0M, .product-item, .product-card',
+//       {
+//         timeout: 15000,
+//       }
+//     );
+
+//     // Extract product data with more resilient selectors
+//     const productData = await page.evaluate(() => {
+//       const products = [];
+//       const cards = document.querySelectorAll('.ProductCard_container__7IE0M');
+
+//       cards.forEach((card) => {
+//         products.push({
+//           name: card
+//             .querySelector(
+//               '.ProductCard_productInfo__o003P > .ProductCard_title__Rpp75 > span'
+//             )
+//             ?.textContent?.trim(),
+//           price: card
+//             .querySelector(
+//               '.ProductCard_productInfo_priceDetails__cLnm0 > .ProductCard_productInfo__price__NyCJR > span'
+//             )
+//             ?.textContent?.trim(),
+//           image: card.querySelector('img')?.src,
+//           link: card.querySelector('a')?.href,
+//         });
+//       });
+
+//       return products.filter((p) => p.name && p.price);
+//     });
+
+//     console.log(`Found ${productData.length} products`);
+//     console.log(productData);
+
+//     return productData;
+//   } catch (error) {
+//     console.error('Scraping failed:', error);
+//     await page?.screenshot({ path: 'error.png' });
+//     return [];
+//   } finally {
+//     await browser?.close();
+//   }
+// }
+
+// getProductData();
+
+// import puppeteer from 'puppeteer';
+// import { setTimeout } from 'timers/promises';
+
+// async function scrapeSparGeorgia() {
+//   const browser = await puppeteer.launch({
+//     headless: false, // Set to true in production
+//     defaultViewport: { width: 1280, height: 800 },
+//     args: ['--no-sandbox', '--disable-setuid-sandbox'],
+//   });
+//   const page = await browser.newPage();
+
+//   try {
+//     // Configure browser settings
+//     await page.setUserAgent(
+//       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+//     );
+//     page.setDefaultNavigationTimeout(60000);
+
+//     // Navigate to SPAR Georgia's Georgian site
+//     await page.goto('https://spargeorgia.com/ka', {
+//       waitUntil: 'networkidle2',
+//       timeout: 60000,
+//     });
+
+//     // Handle cookie consent if it appears
+//     try {
+//       await page.waitForSelector('.cookie-modal .btn-primary', {
+//         timeout: 3000,
+//       });
+//       await page.click('.cookie-modal .btn-primary');
+//       await setTimeout(1000);
+//     } catch (e) {
+//       console.log('No cookie consent found');
+//     }
+
+//     // Find and click on "პოპულარული" (Popular) section
+//     try {
+//       const popularLinkSelector =
+//         'a:has-text("პოპულარული"), a[href*="popular"], .popular-products a';
+//       await page.waitForSelector(popularLinkSelector, { timeout: 10000 });
+//       await page.click(popularLinkSelector);
+//       await page.waitForNavigation({ waitUntil: 'networkidle2' });
+//     } catch (e) {
+//       console.log('Popular link not found, trying alternative approach');
+//       await page.click('a[href*="/products"]');
+//       await page.waitForSelector('.product-list', { timeout: 10000 });
+//     }
+
+//     // Wait for products to load with multiple possible selectors
+//     await page.waitForSelector(
+//       '.product-item, .product-card, [data-product-id]',
+//       {
+//         timeout: 15000,
+//       }
+//     );
+
+//     // Scroll to load all products (for lazy loading)
+//     await autoScroll(page);
+
+//     // Extract product data with robust selectors
+//     const products = await page.evaluate(() => {
+//       const productCards = Array.from(
+//         document.querySelectorAll(
+//           '.product-item, .product-card, [data-product-id]'
+//         )
+//       );
+
+//       return productCards
+//         .map((card) => {
+//           const priceElement = card.querySelector(
+//             '.price, .product-price, [data-price]'
+//           );
+//           const oldPriceElement = card.querySelector('.old-price, .price--old');
+
+//           return {
+//             name: card
+//               .querySelector('.product-title, .name, .title')
+//               ?.textContent?.trim(),
+//             currentPrice: priceElement?.textContent?.trim(),
+//             originalPrice: oldPriceElement?.textContent?.trim(),
+//             discount: card
+//               .querySelector('.discount, .sale-tag')
+//               ?.textContent?.trim(),
+//             image:
+//               card.querySelector('img[src], img[data-src]')?.src ||
+//               card.querySelector('img[src], img[data-src]')?.dataset.src,
+//             link: card.querySelector('a[href]')?.href,
+//             unit: card
+//               .querySelector('.unit, .measurement')
+//               ?.textContent?.trim(),
+//           };
+//         })
+//         .filter((p) => p.name && p.currentPrice);
+//     });
+
+//     console.log(
+//       `Successfully scraped ${products.length} products from SPAR Georgia`
+//     );
+//     console.log('Sample products:', products.slice(0, 3));
+
+//     return products;
+//   } catch (error) {
+//     console.error('SPAR Georgia scraping failed:', error);
+//     await page.screenshot({ path: 'spar-georgia-error.png' });
+//     return [];
+//   } finally {
+//     await browser.close();
+//   }
+// }
+
+// // Auto-scroll function for lazy-loaded content
+// async function autoScroll(page) {
+//   await page.evaluate(async () => {
+//     await new Promise((resolve) => {
+//       let totalHeight = 0;
+//       const distance = 300;
+//       const scrollDelay = 200;
+
+//       const timer = setInterval(() => {
+//         const scrollHeight = document.body.scrollHeight;
+//         window.scrollBy(0, distance);
+//         totalHeight += distance;
+
+//         if (totalHeight >= scrollHeight - window.innerHeight) {
+//           clearInterval(timer);
+//           setTimeout(resolve, 1000); // Extra second after reaching bottom
+//         }
+//       }, scrollDelay);
+//     });
+//   });
+// }
+
+// // Run the scraper
+// scrapeSparGeorgia();
