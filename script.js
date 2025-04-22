@@ -596,3 +596,11 @@
 
 // // Run the scraper
 // scrapeSparGeorgia();
+
+//! task 19
+
+function countArgs(arg) {
+  console.log(arg.length);
+}
+
+countArgs([{}, null, '3']);
