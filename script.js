@@ -599,8 +599,24 @@
 
 //! task 19
 
-function countArgs(arg) {
-  console.log(arg.length);
+// function countArgs(arg) {
+//   console.log(arg.length);
+// }
+
+// countArgs([{}, null, '3']);
+
+//! task 20
+function expect(val) {
+  return {
+    toBe: (val2) => {
+      if (val === val2) return console.log('To Be Equal');
+      return console.log('Not To Be Equal');
+    },
+    notTOBe: (val2) => {
+      if (val !== val2) return console.log('Not To Be Equal');
+      return console.log('To Be Equal');
+    },
+  };
 }
 
-countArgs([{}, null, '3']);
+expect(5).toBe(-5);
