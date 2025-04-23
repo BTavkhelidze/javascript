@@ -606,17 +606,37 @@
 // countArgs([{}, null, '3']);
 
 //! task 20
-function expect(val) {
-  return {
-    toBe: (val2) => {
-      if (val === val2) return console.log('To Be Equal');
-      return console.log('Not To Be Equal');
-    },
-    notTOBe: (val2) => {
-      if (val !== val2) return console.log('Not To Be Equal');
-      return console.log('To Be Equal');
-    },
-  };
+// function expect(val) {
+//   return {
+//     toBe: (val2) => {
+//       if (val === val2) return console.log('To Be Equal');
+//       return console.log('Not To Be Equal');
+//     },
+//     notTOBe: (val2) => {
+//       if (val !== val2) return console.log('Not To Be Equal');
+//       return console.log('To Be Equal');
+//     },
+//   };
+// }
+
+// expect(5).toBe(-5);
+
+//! task 21
+
+function sortedarr(arr, fn) {
+  return arr.sort((a, b) => fn(a) - fn(b));
 }
 
-expect(5).toBe(-5);
+let res1 = sortedarr([5, 4, 1, 2, 3], (x) => x);
+let res2 = sortedarr(
+  [
+    [3, 4],
+    [5, 2],
+    [10, 1],
+  ],
+  (x) => x[1]
+);
+let res3 = sortedarr([{ x: 1 }, { x: 0 }, { x: -1 }], (d) => d.x);
+console.log(res1);
+console.log(res2);
+console.log(res3);
