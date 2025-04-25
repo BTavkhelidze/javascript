@@ -623,20 +623,53 @@
 
 //! task 21
 
-function sortedarr(arr, fn) {
-  return arr.sort((a, b) => fn(a) - fn(b));
-}
+// function sortedarr(arr, fn) {
+//   return arr.sort((a, b) => fn(a) - fn(b));
+// }
 
-let res1 = sortedarr([5, 4, 1, 2, 3], (x) => x);
-let res2 = sortedarr(
-  [
-    [3, 4],
-    [5, 2],
-    [10, 1],
-  ],
-  (x) => x[1]
-);
-let res3 = sortedarr([{ x: 1 }, { x: 0 }, { x: -1 }], (d) => d.x);
-console.log(res1);
-console.log(res2);
-console.log(res3);
+// let res1 = sortedarr([5, 4, 1, 2, 3], (x) => x);
+// let res2 = sortedarr(
+//   [
+//     [3, 4],
+//     [5, 2],
+//     [10, 1],
+//   ],
+//   (x) => x[1]
+// );
+// let res3 = sortedarr([{ x: 1 }, { x: 0 }, { x: -1 }], (d) => d.x);
+// console.log(res1);
+// console.log(res2);
+// console.log(res3);
+
+//! task22
+
+// function isObjectEmpty(obj) {
+//   console.log(Object.keys(obj).length);
+//   if (Object.keys(obj).length > 0) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// isObjectEmpty({ x: 5, y: 42 });
+// isObjectEmpty([null, false, 0]);
+// isObjectEmpty([]);
+// isObjectEmpty({ y: 10 });
+
+//! task23
+
+// const sleep = async (ts) => {
+//   return new Promise((res, rej) => {
+//     setTimeout(() => {
+//       res();
+//     }, ts);
+//   });
+// };
+
+// async function main() {
+//   for (let i = 0; i < 10; i++) {
+//     await sleep(1000);
+//     console.log(i);
+//   }
+// }
+// main();
