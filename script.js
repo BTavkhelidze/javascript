@@ -673,3 +673,13 @@
 //   }
 // }
 // main();
+
+//! task24
+
+const promise1 = new Promise((resolve) => setTimeout(() => resolve(2), 20));
+const promise2 = new Promise((resolve) => setTimeout(() => resolve(5), 60));
+
+Promise.all([promise1, promise2]).then((res) => {
+  const result = res.reduce((acc, cur) => acc + cur, 0);
+  console.log(result);
+});
