@@ -686,14 +686,35 @@
 
 // ! task 25
 
-function removeExlamationMark(str) {
-  const res = str
-    .split('')
-    .filter((el, i) => el !== '!')
-    .join('');
+// function removeExlamationMark(str) {
+//   const res = str
+//     .split('')
+//     .filter((el, i) => el !== '!')
+//     .join('');
 
-  console.log(res);
+//   console.log(res);
+// }
+
+// removeExlamationMark('what!!!!');
+// removeExlamationMark('!!!HelloWorld!!!');
+
+// ! task 26
+
+function maxMinRange(age) {
+  let min;
+  let max;
+
+  if (age <= 14) {
+    min = age - 0.1 * age;
+    max = age + 0.1 * age;
+    return console.log(`(${min}-${max})`);
+  }
+  min = age / 2 + 7;
+  max = 2 * (age - 7);
+
+  console.log(`(${min}-${max})`);
 }
 
-removeExlamationMark('what!!!!');
-removeExlamationMark('!!!HelloWorld!!!');
+maxMinRange(22);
+maxMinRange(14);
+maxMinRange(40);
