@@ -731,20 +731,32 @@
 
 // ! task 28
 
-function removeEverySecondElement(arr) {
-  const res = arr.filter((el, i) => i % 2 === 0);
-  console.log(res);
+// function removeEverySecondElement(arr) {
+//   const res = arr.filter((el, i) => i % 2 === 0);
+//   console.log(res);
+// }
+
+// removeEverySecondElement([
+//   'Keep',
+//   'Remove',
+//   'Keep',
+//   'Remove',
+//   'Keep',
+//   'Remove',
+//   'Keep',
+//   'Remove',
+//   'Keep',
+//   'Remove',
+// ]);
+
+// ! task 29
+
+function square(num) {
+  return num ** 2;
 }
 
-removeEverySecondElement([
-  'Keep',
-  'Remove',
-  'Keep',
-  'Remove',
-  'Keep',
-  'Remove',
-  'Keep',
-  'Remove',
-  'Keep',
-  'Remove',
-]);
+console.log(square(2));
+console.log(square(4));
+console.log(square(3));
+console.log(square(5));
+console.log(square(1));
