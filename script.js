@@ -721,10 +721,30 @@
 
 // ! task 27
 
-function oddOrEven(num) {
-  const res = num % 2 === 0 ? console.log('even') : console.log('odd');
+// function oddOrEven(num) {
+//   const res = num % 2 === 0 ? console.log('even') : console.log('odd');
+// }
+
+// oddOrEven(20);
+// oddOrEven(14);
+// oddOrEven(213);
+
+// ! task 28
+
+function removeEverySecondElement(arr) {
+  const res = arr.filter((el, i) => i % 2 === 0);
+  console.log(res);
 }
 
-oddOrEven(20);
-oddOrEven(14);
-oddOrEven(213);
+removeEverySecondElement([
+  'Keep',
+  'Remove',
+  'Keep',
+  'Remove',
+  'Keep',
+  'Remove',
+  'Keep',
+  'Remove',
+  'Keep',
+  'Remove',
+]);
