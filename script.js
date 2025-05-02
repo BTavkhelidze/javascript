@@ -700,21 +700,31 @@
 
 // ! task 26
 
-function maxMinRange(age) {
-  let min;
-  let max;
+// function maxMinRange(age) {
+//   let min;
+//   let max;
 
-  if (age <= 14) {
-    min = age - 0.1 * age;
-    max = age + 0.1 * age;
-    return console.log(`(${min}-${max})`);
-  }
-  min = age / 2 + 7;
-  max = 2 * (age - 7);
+//   if (age <= 14) {
+//     min = age - 0.1 * age;
+//     max = age + 0.1 * age;
+//     return console.log(`(${min}-${max})`);
+//   }
+//   min = age / 2 + 7;
+//   max = 2 * (age - 7);
 
-  console.log(`(${min}-${max})`);
+//   console.log(`(${min}-${max})`);
+// }
+
+// maxMinRange(22);
+// maxMinRange(14);
+// maxMinRange(40);
+
+// ! task 27
+
+function oddOrEven(num) {
+  const res = num % 2 === 0 ? console.log('even') : console.log('odd');
 }
 
-maxMinRange(22);
-maxMinRange(14);
-maxMinRange(40);
+oddOrEven(20);
+oddOrEven(14);
+oddOrEven(213);
