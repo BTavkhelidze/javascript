@@ -751,12 +751,25 @@
 
 // ! task 29
 
-function square(num) {
-  return num ** 2;
+// function square(num) {
+//   return num ** 2;
+// }
+
+// console.log(square(2));
+// console.log(square(4));
+// console.log(square(3));
+// console.log(square(5));
+// console.log(square(1));
+
+// ! task 30
+
+function countTo(num) {
+  const arr = [];
+  for (let i = 1; i <= num; i++) {
+    arr.push(i);
+  }
+  console.log(arr);
 }
 
-console.log(square(2));
-console.log(square(4));
-console.log(square(3));
-console.log(square(5));
-console.log(square(1));
+countTo(1);
+countTo(10);
