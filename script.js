@@ -785,12 +785,21 @@
 
 // ! task 32
 
+// function repeatWort(n, s) {
+//   const word = [];
+//   for (let i = 0; i < n; i++) {
+//     word.push(s);
+//   }
+//   console.log(word.join(''));
+// }
+
+// repeatWort(6, 'what');
+
 function repeatWort(n, s) {
-  const word = [];
-  for (let i = 0; i < n; i++) {
-    word.push(s);
+  if (n < 0) {
+    console.error('Number must be a non-negative integer');
   }
-  console.log(word.join(''));
+  console.log(s.repeat(n));
 }
 
 repeatWort(6, 'what');
