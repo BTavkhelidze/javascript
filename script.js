@@ -795,11 +795,27 @@
 
 // repeatWort(6, 'what');
 
-function repeatWort(n, s) {
-  if (n < 0) {
-    console.error('Number must be a non-negative integer');
-  }
-  console.log(s.repeat(n));
+// ! task 33
+// function repeatWort(n, s) {
+//   if (n < 0) {
+//     console.error('Number must be a non-negative integer');
+//   }
+//   console.log(s.repeat(n));
+// }
+
+// repeatWort(6, 'what');
+
+// ! task 34
+
+function replaceAllVowel(word) {
+  const vowel = 'aeiouAEIOU';
+  const res = word.split('').map((l) => {
+    if (vowel.includes(l)) {
+      return '!';
+    }
+    return l;
+  });
+  return res.join('');
 }
 
-repeatWort(6, 'what');
+console.log(replaceAllVowel('Hi!'));
