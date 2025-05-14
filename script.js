@@ -763,13 +763,34 @@
 
 // ! task 30
 
-function countTo(num) {
-  const arr = [];
-  for (let i = 1; i <= num; i++) {
-    arr.push(i);
+// function countTo(num) {
+//   const arr = [];
+//   for (let i = 1; i <= num; i++) {
+//     arr.push(i);
+//   }
+//   console.log(arr);
+// }
+
+// countTo(1);
+// countTo(10);
+
+// ! task 31
+
+// function removeDuplicant(arr) {
+//   return [...new Set(arr)];
+// }
+
+// console.log(removeDuplicant([1, 1, 2]));
+// console.log(removeDuplicant([1, 2, 1, 1, 3, 2]));
+
+// ! task 32
+
+function repeatWort(n, s) {
+  const word = [];
+  for (let i = 0; i < n; i++) {
+    word.push(s);
   }
-  console.log(arr);
+  console.log(word.join(''));
 }
 
-countTo(1);
-countTo(10);
+repeatWort(6, 'what');
