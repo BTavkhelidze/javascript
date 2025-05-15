@@ -936,13 +936,23 @@
 //   }
 //   return [];
 // }
-function removeSmallest(numbers) {
-  if (numbers.length === 0) return numbers;
+// function removeSmallest(numbers) {
+//   if (numbers.length === 0) return numbers;
 
-  const index = numbers.indexOf(Math.min(...numbers));
-  console.log(index);
-  return [...numbers.slice(0, index), ...numbers.slice(index + 1)];
+//   const index = numbers.indexOf(Math.min(...numbers));
+//   console.log(index);
+//   return [...numbers.slice(0, index), ...numbers.slice(index + 1)];
+// }
+
+// console.log(removeSmallest([1, 6, 2, 3, 4, 5]));
+// console.log(removeSmallest([5, 3, 2, 1, 4]));
+
+//! task 42
+
+function longest(s1, s2) {
+  const arr = [...s1, ...s2].sort();
+  const res = new Set(arr);
+  return [...res].join('');
 }
 
-console.log(removeSmallest([1, 6, 2, 3, 4, 5]));
-console.log(removeSmallest([5, 3, 2, 1, 4]));
+console.log(longest('xyaabbbccccdefww', 'xyaabbbccccdefww'));
