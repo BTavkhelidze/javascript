@@ -900,11 +900,24 @@
 // console.log(getDrinkByProfession('ss'));
 // console.log(getDrinkByProfession('Rapper'));
 
-//task 39
+//! task 39
 
-let websites = [];
-function addElement() {
-  websites.push('codewars');
+// let websites = [];
+// function addElement() {
+//   websites.push('codewars');
+// }
+// addElement();
+// console.log(websites);
+
+//! task 40
+
+function findAverage(array) {
+  if (array.length > 0) {
+    return (array.reduce((acc, cur) => acc + cur) / array.length).toFixed(2);
+  }
+  return 0;
 }
-addElement();
-console.log(websites);
+
+console.log(findAverage([10, 30, 12]));
+console.log(findAverage([1, 3, 4]));
+console.log(findAverage([]));
