@@ -949,10 +949,40 @@
 
 //! task 42
 
-function longest(s1, s2) {
-  const arr = [...s1, ...s2].sort();
-  const res = new Set(arr);
-  return [...res].join('');
+// function longest(s1, s2) {
+//   const arr = [...s1, ...s2].sort();
+//   const res = new Set(arr);
+//   return [...res].join('');
+// }
+
+// console.log(longest('xyaabbbccccdefww', 'xyaabbbccccdefww'));
+
+// ! task 43
+
+function accum(s) {
+  const word = s.split('');
+  //   console.log(word);
+  const result = [];
+  for (let i = 0; i < word.length; i++) {
+    // console.log(i);
+    for (let j = i; j < word.length; j++) {
+      if (i + 1 < j + 1) {
+        break;
+      }
+      result.push(word[i].repeat(i + 1));
+
+      //   if (j === 0) {
+      //     result.push(word[j].toUpperCase());
+      //   } else {
+      //     result.push(word[j].toLowerCase());
+      //   }
+    }
+  }
+  return result
+    .map((el) => el.at(0).toUpperCase().concat(el.slice(0, -1)))
+    .join('-');
 }
 
-console.log(longest('xyaabbbccccdefww', 'xyaabbbccccdefww'));
+console.log(accum('abcd'));
+console.log(accum('RqaEzty'));
+// console.log('cwAt');
