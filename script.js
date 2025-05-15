@@ -970,12 +970,6 @@ function accum(s) {
         break;
       }
       result.push(word[i].repeat(i + 1));
-
-      //   if (j === 0) {
-      //     result.push(word[j].toUpperCase());
-      //   } else {
-      //     result.push(word[j].toLowerCase());
-      //   }
     }
   }
   return result
@@ -985,4 +979,12 @@ function accum(s) {
 
 console.log(accum('abcd'));
 console.log(accum('RqaEzty'));
-// console.log('cwAt');
+// // console.log('cwAt');
+
+//! task 44
+// function accum(s) {
+//   return s
+//     .split('')
+//     .map((char, i) => char.toUpperCase() + char.toLowerCase().repeat(i))
+//     .join('-');
+// }
