@@ -911,13 +911,38 @@
 
 //! task 40
 
-function findAverage(array) {
-  if (array.length > 0) {
-    return (array.reduce((acc, cur) => acc + cur) / array.length).toFixed(2);
-  }
-  return 0;
+// function findAverage(array) {
+//   if (array.length > 0) {
+//     return (array.reduce((acc, cur) => acc + cur) / array.length).toFixed(2);
+//   }
+//   return 0;
+// }
+
+// console.log(findAverage([10, 30, 12]));
+// console.log(findAverage([1, 3, 4]));
+// console.log(findAverage([]));
+
+//! task 41
+// function removeSmallest(numbers) {
+//   let copyArr = [...numbers];
+//   let arr = [...numbers];
+//   let smallestNum = numbers.at(0);
+//   //   console.log(arr.length);
+//   if (arr.length > 0) {
+//     arr.sort((a, b) => a - b);
+//     if (arr.at(0) < smallestNum) smallestNum = arr.at(0);
+//     copyArr.splice(copyArr.indexOf(smallestNum), 1);
+//     return copyArr;
+//   }
+//   return [];
+// }
+function removeSmallest(numbers) {
+  if (numbers.length === 0) return numbers;
+
+  const index = numbers.indexOf(Math.min(...numbers));
+  console.log(index);
+  return [...numbers.slice(0, index), ...numbers.slice(index + 1)];
 }
 
-console.log(findAverage([10, 30, 12]));
-console.log(findAverage([1, 3, 4]));
-console.log(findAverage([]));
+console.log(removeSmallest([1, 6, 2, 3, 4, 5]));
+console.log(removeSmallest([5, 3, 2, 1, 4]));
