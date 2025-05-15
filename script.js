@@ -825,10 +825,30 @@
 
 // ! task 35
 
-function greeting(name, owner) {
-  return name === owner ? `Hello boss` : 'Hello Guest';
+// function greeting(name, owner) {
+//   return name === owner ? `Hello boss` : 'Hello Guest';
+// }
+
+// console.log(greeting('boss', 'boss'));
+// console.log(greeting('boss', 'Beqa'));
+// console.log(greeting('Beqa', 'Beqa'));
+
+// ! task 36
+
+function remove(s) {
+  const split = s.split('');
+  const arrNon = [];
+  for (let i = 0; i < split.length; i++) {
+    // console.log(split[i]);
+    if (split[i] !== '!') {
+      arrNon.push(i);
+    }
+    // consolelog(split[i]);
+  }
+
+  split.splice(arrNon.at(-1) + 1, split.length);
+  return split;
 }
 
-console.log(greeting('boss', 'boss'));
-console.log(greeting('boss', 'Beqa'));
-console.log(greeting('Beqa', 'Beqa'));
+console.log(remove('hi!!!'));
+console.log(remove('!hi!'));
