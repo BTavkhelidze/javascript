@@ -807,15 +807,28 @@
 
 // ! task 34
 
-function replaceAllVowel(word) {
-  const vowel = 'aeiouAEIOU';
-  const res = word.split('').map((l) => {
-    if (vowel.includes(l)) {
-      return '!';
-    }
-    return l;
-  });
-  return res.join('');
+// function replaceAllVowel(word) {
+//   const vowel = 'aeiouAEIOU';
+//   const res = word.split('').map((l) => {
+//     if (vowel.includes(l)) {
+//       return '!';
+//     }
+//     return l;
+//   });
+//   return res.join('');
+//   return word.replace(/[aeiouAEIOU]/gi, '!');
+// }
+
+// console.log(replaceAllVowel('Hi!'));
+// console.log(replaceAllVowel('!Hi! Hi!'));
+// console.log(replaceAllVowel('aeiou'));
+
+// ! task 35
+
+function greeting(name, owner) {
+  return name === owner ? `Hello boss` : 'Hello Guest';
 }
 
-console.log(replaceAllVowel('Hi!'));
+console.log(greeting('boss', 'boss'));
+console.log(greeting('boss', 'Beqa'));
+console.log(greeting('Beqa', 'Beqa'));
