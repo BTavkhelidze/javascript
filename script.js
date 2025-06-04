@@ -1188,13 +1188,141 @@ function accum(s) {
 // console.log(logicSimulation('admi1n', '3234'));
 
 //! task 54
-function checkSign(num) {
-  if (typeof num !== 'number') return 'please enter the number';
-  if (num < 0) return 'Negative';
-  if (num > 0) return 'Positive';
-  return 'Zero';
+// function checkSign(num) {
+//   if (typeof num !== 'number') return 'please enter the number';
+//   if (num < 0) return 'Negative';
+//   if (num > 0) return 'Positive';
+//   return 'Zero';
+// }
+
+// console.log(checkSign(10));
+// console.log(checkSign(-1));
+// console.log(checkSign('ab'));
+
+//! task 55
+
+// function getDayOfWeek(num) {
+//   console.log(num === 1);
+//   switch (num) {
+//     case 1:
+//       console.log('monday');
+//       break;
+//     case 2:
+//       console.log('tusday');
+//       break;
+//     case 3:
+//       console.log('wednesday');
+//       break;
+//     case 4:
+//       console.log('thursday');
+//       break;
+//     case 5:
+//       console.log('friday');
+//       break;
+//     case 6:
+//       console.log('saturday');
+//       break;
+//     case 7:
+//       console.log('sunday');
+//       break;
+//     default:
+//       console.log('somthing went wrong');
+//   }
+// }
+
+// getDayOfWeek(1);
+// getDayOfWeek(6);
+// getDayOfWeek(12);
+
+//! task 56
+
+// function calculator(num1, num2, operator) {
+//   switch (operator) {
+//     case '+':
+//       console.log(num1 + num2);
+//       break;
+//     case '-':
+//       console.log(num1 - num2);
+//       break;
+//     case '/':
+//       console.log(num1 / num2);
+//       break;
+//     case '*':
+//       console.log(num1 * num2);
+//       break;
+//     default:
+//       console.log('somthing wrong');
+//   }
+// }
+
+// calculator(1, 2, '+');
+// calculator(10, 2, '-');
+// calculator(10, 3, '*');
+
+//! task 56
+
+// function trafficLight(color) {
+//   switch (color) {
+//     case 'red':
+//       console.log('stop');
+//       break;
+//     case 'yellow':
+//       console.log('Slow down');
+//       break;
+//     case 'green':
+//       console.log('go');
+//       break;
+//     default:
+//       console.log('invalid color');
+//   }
+// }
+
+// trafficLight('red');
+
+//! task 57
+
+function fruitPriceChecker(fruit) {
+  switch (fruit) {
+    case 'apple':
+      console.log('$1');
+      break;
+    case 'banana':
+      console.log('$0.5');
+      break;
+    case 'orange':
+      console.log('$0.8');
+      break;
+    default:
+      console.log('Not available');
+  }
 }
 
-console.log(checkSign(10));
-console.log(checkSign(-1));
-console.log(checkSign('ab'));
+fruitPriceChecker('apple');
+fruitPriceChecker('banana');
+fruitPriceChecker('banaa');
+
+function gradeMessage(grade) {
+  switch (grade) {
+    case 'A':
+      console.log('Excellent');
+      break;
+    case 'B':
+      console.log('Good');
+      break;
+    case 'C':
+      console.log('Average');
+      break;
+    case 'D':
+      console.log('Poor');
+      break;
+    case 'F':
+      console.log('Fail');
+      break;
+    default:
+      console.log('Invalid grade');
+  }
+}
+
+gradeMessage('A');
+gradeMessage('D');
+gradeMessage('B');
