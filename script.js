@@ -993,46 +993,46 @@ function accum(s) {
 // console.log(accum('RqaEzty'));
 
 //! task 45
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
 // Goal Scorer
 // game.scored.map((player, i) => console.log(`Goal ${i + 1}: ${player}`));
@@ -1058,12 +1058,72 @@ const game = {
 //   console.log(`Odd of ${teamStr} ${odds}`);
 // }
 
-let scorrers = {};
-for (const [i, player] of Object.entries(game.scored)) {
-  if (!scorrers[player]) {
-    scorrers[player] = 1;
-  } else {
-    scorrers[player] += 1;
-  }
-  console.log(scorrers);
-}
+// let scorrers = {};
+// for (const [i, player] of Object.entries(game.scored)) {
+//   if (!scorrers[player]) {
+//     scorrers[player] = 1;
+//   } else {
+//     scorrers[player] += 1;
+//   }
+//   console.log(scorrers);
+// }
+
+//! task 46
+
+// function greeting() {
+//   return (name) => {
+//     console.log(`Hello ${name}`);
+//   };
+// }
+
+// const user = greeting();
+// user('Dato');
+// user('Beka');
+
+//! task 47
+
+// function makeMultiplier(multiplier) {
+//   return function multiply(number) {
+//     console.log(number * multiplier);
+//   };
+// }
+
+// const number = makeMultiplier(5);
+// number(10);
+// number(2);
+// number(3);
+
+//! task 48
+// function counter() {
+//   let count = 0;
+
+//   return {
+//     increment() {
+//       count++;
+//     },
+//     decrement() {
+//       count--;
+//     },
+//     getCount() {
+//       console.log(count);
+//     },
+//   };
+// }
+
+// const result = counter();
+// result.increment();
+// result.increment();
+// result.getCount();
+// result.decrement();
+// result.getCount();
+
+//! task 48
+
+// function createLogger(message) {
+//   return function logger() {
+//     console.log(message);
+//   };
+// }
+
+// const message = createLogger('WHats up brother');
+// message();
