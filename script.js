@@ -1117,7 +1117,7 @@ function accum(s) {
 // result.decrement();
 // result.getCount();
 
-//! task 48
+//! task 49
 
 // function createLogger(message) {
 //   return function logger() {
@@ -1127,3 +1127,74 @@ function accum(s) {
 
 // const message = createLogger('WHats up brother');
 // message();
+
+//! task 50
+
+// function checkAge(age) {
+//   if (age < 13) {
+//     return 'child';
+//   }
+
+//   if (age >= 13 && age <= 19) {
+//     return 'Teenager';
+//   }
+
+//   return 'Adult';
+// }
+
+// console.log(checkAge(18));
+// console.log(checkAge(25));
+// console.log(checkAge(13));
+
+//! task 51
+
+// function checkNumber(num) {
+//   if (num % 2 === 0) {
+//     return 'even';
+//   }
+
+//   return 'odd';
+// }
+
+// console.log(checkNumber(10));
+// console.log(checkNumber(34));
+// console.log(checkNumber(31));
+
+//! task 52
+
+// function gradingSystem(num) {
+//   if (num < 60) return 'F';
+//   if (num < 70) return 'D';
+//   if (num < 80) return 'C';
+//   if (num < 90) return 'B';
+//   return 'A';
+// }
+
+// console.log(gradingSystem(43));
+// console.log(gradingSystem(73));
+// console.log(gradingSystem(80));
+// console.log(gradingSystem(92));
+
+//! task 53
+
+// function logicSimulation(userName, password) {
+//   if (userName !== 'admin') return 'User not found';
+//   if (userName === 'admin' && password !== '1234') return 'Wrong password';
+//   return 'Login Successful';
+// }
+
+// console.log(logicSimulation('admin', '1234'));
+// console.log(logicSimulation('admin', '3234'));
+// console.log(logicSimulation('admi1n', '3234'));
+
+//! task 54
+function checkSign(num) {
+  if (typeof num !== 'number') return 'please enter the number';
+  if (num < 0) return 'Negative';
+  if (num > 0) return 'Positive';
+  return 'Zero';
+}
+
+console.log(checkSign(10));
+console.log(checkSign(-1));
+console.log(checkSign('ab'));
