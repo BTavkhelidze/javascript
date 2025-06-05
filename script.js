@@ -1281,48 +1281,87 @@ function accum(s) {
 
 //! task 57
 
-function fruitPriceChecker(fruit) {
-  switch (fruit) {
-    case 'apple':
-      console.log('$1');
-      break;
-    case 'banana':
-      console.log('$0.5');
-      break;
-    case 'orange':
-      console.log('$0.8');
-      break;
-    default:
-      console.log('Not available');
+// function fruitPriceChecker(fruit) {
+//   switch (fruit) {
+//     case 'apple':
+//       console.log('$1');
+//       break;
+//     case 'banana':
+//       console.log('$0.5');
+//       break;
+//     case 'orange':
+//       console.log('$0.8');
+//       break;
+//     default:
+//       console.log('Not available');
+//   }
+// }
+
+// fruitPriceChecker('apple');
+// fruitPriceChecker('banana');
+// fruitPriceChecker('banaa');
+
+// function gradeMessage(grade) {
+//   switch (grade) {
+//     case 'A':
+//       console.log('Excellent');
+//       break;
+//     case 'B':
+//       console.log('Good');
+//       break;
+//     case 'C':
+//       console.log('Average');
+//       break;
+//     case 'D':
+//       console.log('Poor');
+//       break;
+//     case 'F':
+//       console.log('Fail');
+//       break;
+//     default:
+//       console.log('Invalid grade');
+//   }
+// }
+
+// gradeMessage('A');
+// gradeMessage('D');
+// gradeMessage('B');
+
+//! task 59
+
+// let num = 0;
+// let condition = false;
+
+// for (let i = 0; i < 10; i++) {
+//   for (let j = 0; j < 10; j++) {
+//     if (i === 6 && j === 6) {
+//       console.log('first');
+//       condition = true;
+//       break;
+//     }
+
+//     num++;
+//   }
+//   console.log(i);
+// }
+// console.log(condition);
+
+// console.log(num, 'num');
+
+let num = 0;
+let condition = false;
+
+outher: for (let i = 0; i < 10; i++) {
+  for (let j = 0; j < 10; j++) {
+    if (i === 5 && j === 5) {
+      console.log('first');
+      condition = true;
+      break outher;
+    }
+
+    num++;
   }
 }
+console.log(condition);
 
-fruitPriceChecker('apple');
-fruitPriceChecker('banana');
-fruitPriceChecker('banaa');
-
-function gradeMessage(grade) {
-  switch (grade) {
-    case 'A':
-      console.log('Excellent');
-      break;
-    case 'B':
-      console.log('Good');
-      break;
-    case 'C':
-      console.log('Average');
-      break;
-    case 'D':
-      console.log('Poor');
-      break;
-    case 'F':
-      console.log('Fail');
-      break;
-    default:
-      console.log('Invalid grade');
-  }
-}
-
-gradeMessage('A');
-gradeMessage('D');
-gradeMessage('B');
+console.log(num, 'num');
