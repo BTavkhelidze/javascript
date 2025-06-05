@@ -1348,20 +1348,49 @@ function accum(s) {
 
 // console.log(num, 'num');
 
+// let num = 0;
+// let condition = false;
+
+// outher: for (let i = 0; i < 10; i++) {
+//   for (let j = 0; j < 10; j++) {
+//     if (i === 5 && j === 5) {
+//       console.log('first');
+//       condition = true;
+//       break outher;
+//     }
+
+//     num++;
+//   }
+// }
+// console.log(condition);
+
+// console.log(num, 'num');
+
+// for (let i = 0; i < 10; i++) {
+//   if (i === 3) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+// let i = 0;
+
+// while (i < 10) {
+//   i++;
+//   if (i === 3) continue;
+//   console.log(i);
+// }
 let num = 0;
 let condition = false;
-
-outher: for (let i = 0; i < 10; i++) {
+label: for (let i = 0; i < 10; i++) {
   for (let j = 0; j < 10; j++) {
     if (i === 5 && j === 5) {
-      console.log('first');
       condition = true;
-      break outher;
+      console.log(j);
+      continue label;
     }
-
     num++;
   }
+  // console.log(i);
 }
-console.log(condition);
-
-console.log(num, 'num');
+console.log(num);
