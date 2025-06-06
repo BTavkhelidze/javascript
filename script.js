@@ -1380,17 +1380,34 @@ function accum(s) {
 //   if (i === 3) continue;
 //   console.log(i);
 // }
-let num = 0;
-let condition = false;
-label: for (let i = 0; i < 10; i++) {
-  for (let j = 0; j < 10; j++) {
-    if (i === 5 && j === 5) {
-      condition = true;
-      console.log(j);
-      continue label;
-    }
-    num++;
-  }
-  // console.log(i);
-}
-console.log(num);
+// let num = 0;
+// let condition = false;
+// label: for (let i = 0; i < 10; i++) {
+//   for (let j = 0; j < 10; j++) {
+//     if (i === 5 && j === 5) {
+//       condition = true;
+//       console.log(j);
+//       continue label;
+//     }
+//     num++;
+//   }
+//   // console.log(i);
+// }
+// console.log(num);
+
+//! task 59
+
+console.log(Number('2025') + 10); // 2035
+console.log(100 + ' points'); // 100 points
+console.log('10' - '3' - 2 + '5'); // 55
+console.log(Number('Hello')); // NaN
+console.log(true + 5); // 6
+console.log(false + 5); // NaN
+console.log('20' + 5 + 10); // 20510
+console.log(Boolean('0')); // true
+console.log(Boolean(0)); // false
+console.log(Boolean(1)); //true
+console.log(Boolean('')); // false
+console.log(Boolean('hello')); //true
+console.log(Boolean(undefined)); //false
+console.log(Boolean(null)); //false
