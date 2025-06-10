@@ -1397,17 +1397,78 @@ function accum(s) {
 
 //! task 59
 
-console.log(Number('2025') + 10); // 2035
-console.log(100 + ' points'); // 100 points
-console.log('10' - '3' - 2 + '5'); // 55
-console.log(Number('Hello')); // NaN
-console.log(true + 5); // 6
-console.log(false + 5); // NaN
-console.log('20' + 5 + 10); // 20510
-console.log(Boolean('0')); // true
-console.log(Boolean(0)); // false
-console.log(Boolean(1)); //true
-console.log(Boolean('')); // false
-console.log(Boolean('hello')); //true
-console.log(Boolean(undefined)); //false
-console.log(Boolean(null)); //false
+// console.log(Number('2025') + 10); // 2035
+// console.log(100 + ' points'); // 100 points
+// console.log('10' - '3' - 2 + '5'); // 55
+// console.log(Number('Hello')); // NaN
+// console.log(true + 5); // 6
+// console.log(false + 5); // NaN
+// console.log('20' + 5 + 10); // 20510
+// console.log(Boolean('0')); // true
+// console.log(Boolean(0)); // false
+// console.log(Boolean(1)); //true
+// console.log(Boolean('')); // false
+// console.log(Boolean('hello')); //true
+// console.log(Boolean(undefined)); //false
+// console.log(Boolean(null)); //false
+
+// do {
+//   console.log('hello');
+// } while (1 > 5);
+
+// main task
+
+// function StopWatch() {
+//   let time = { x: 0 };
+
+//   this.start = function () {
+//     time = new Date().getTime();
+//   };
+//   this.stop = function () {
+//     let newTime = new Date().getTime();
+
+//     console.log(newTime - time);
+//   };
+//   this.reset = function () {
+//     console.log('reset');
+//   };
+//   this.pause = function () {
+//     console.log('pause');
+//   };
+
+//   Object.defineProperty(this, time, {
+//     get: function () {
+//       return 'hello';
+//     },
+//   });
+// }
+// const sw = new StopWatch();
+// sw.start();
+// console.log(sw.time());
+// // sw.stop();
+
+// function Book(title, author, pages) {
+//   let rating = 3;
+//   (this.title = title), (this.author = author), (this.pages = pages);
+//   this.getSummary = function () {
+//     console.log(`Book: ${this.title} by ${this.author}, ${this.pages} pages`);
+//   };
+
+//   Object.defineProperty(this, 'rating', {
+//     get: function () {
+//       return rating;
+//     },
+//     set: function (value) {
+//       if (typeof value !== 'number' || value < 0 || value > 5)
+//         throw new Error('invalid rating');
+
+//       rating = value;
+//     },
+//   });
+// }
+
+// const AnnaKarenina = new Book('Anna Karenina', 'Lev Tolstoi', 400);
+// AnnaKarenina.getSummary();
+// console.log(AnnaKarenina.rating);
+// AnnaKarenina.rating = 6;
+// console.log(AnnaKarenina.rating);
