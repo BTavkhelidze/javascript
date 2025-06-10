@@ -1472,3 +1472,34 @@ function accum(s) {
 // console.log(AnnaKarenina.rating);
 // AnnaKarenina.rating = 6;
 // console.log(AnnaKarenina.rating);
+
+function BankAccount(accountHolder, currency) {
+  let balance = 0;
+  this.accountHolder = accountHolder;
+  this.currency = currency;
+  this.deposit = function (amount) {
+    if (typeof amount !== 'number' || amount < 0)
+      throw new Error('Invalid Amount for Deposit');
+    balance += amount;
+  };
+
+  this.withdraw = function (amount) {
+    if (typeof amount !== 'number' || amount > balance || amount < 0)
+      throw new Error('Invalid Amount for Withdraw');
+    balance -= amount;
+  };
+
+  Object.defineProperty(this, 'balance', {
+    get: function () {
+      return `${balance}${this.currency}`;
+    },
+    set: function (amount) {
+      throw new Error('Use deposit/withdraw methods.');
+    },
+  });
+}
+
+const account1 = new BankAccount('Beka Tavkhelidze', 'USD');
+// account1.deposit(-111);
+console.log(account1.balance);
+account1.balance = 100;
