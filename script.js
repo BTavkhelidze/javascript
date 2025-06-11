@@ -1473,33 +1473,91 @@ function accum(s) {
 // AnnaKarenina.rating = 6;
 // console.log(AnnaKarenina.rating);
 
-function BankAccount(accountHolder, currency) {
-  let balance = 0;
-  this.accountHolder = accountHolder;
-  this.currency = currency;
-  this.deposit = function (amount) {
-    if (typeof amount !== 'number' || amount < 0)
-      throw new Error('Invalid Amount for Deposit');
-    balance += amount;
-  };
+// function BankAccount(accountHolder, currency) {
+//   let balance = 0;
+//   this.accountHolder = accountHolder;
+//   this.currency = currency;
+//   this.deposit = function (amount) {
+//     if (typeof amount !== 'number' || amount < 0)
+//       throw new Error('Invalid Amount for Deposit');
+//     balance += amount;
+//   };
 
-  this.withdraw = function (amount) {
-    if (typeof amount !== 'number' || amount > balance || amount < 0)
-      throw new Error('Invalid Amount for Withdraw');
-    balance -= amount;
-  };
+//   this.withdraw = function (amount) {
+//     if (typeof amount !== 'number' || amount > balance || amount < 0)
+//       throw new Error('Invalid Amount for Withdraw');
+//     balance -= amount;
+//   };
 
-  Object.defineProperty(this, 'balance', {
-    get: function () {
-      return `${balance}${this.currency}`;
+//   Object.defineProperty(this, 'balance', {
+//     get: function () {
+//       return `${balance}${this.currency}`;
+//     },
+//     set: function (amount) {
+//       throw new Error('Use deposit/withdraw methods.');
+//     },
+//   });
+// }
+
+// const account1 = new BankAccount('Beka Tavkhelidze', 'USD');
+// // account1.deposit(-111);
+// console.log(account1.balance);
+
+//! factory
+
+// function user(name, age) {
+//   return {
+//     name,
+//     age,
+//     isAdult: age >= 18,
+//   };
+// }
+
+// const beqa = user('Beka', 22);
+// console.log(beqa);
+// const dato = user('Dato', 13);
+// console.log(dato);
+
+// function createCar(color, year) {
+//   return {
+//     color,
+//     year,
+//     getAge: function () {
+//       return 2025 - year;
+//     },
+//   };
+// }
+
+// const bmw = createCar('BMW', 2015);
+// console.log(bmw.getAge());
+// const mercedec = createCar('MERCEDES', 2024);
+// console.log(mercedec);
+// console.log(mercedec.getAge());
+
+//! factory bank
+
+function bank() {
+  let balance = 1000;
+  return {
+    deposit: function (amount) {
+      if (amount > 0) return (balance += amount);
+      throw new Error('invalid deposit number');
     },
-    set: function (amount) {
-      throw new Error('Use deposit/withdraw methods.');
+    withdraw: function (amount) {
+      if (amount < 0 || amount > balance)
+        throw new Error('invalid withdraw amount');
+      return (balance -= amount);
     },
-  });
+    getBalance: () => {
+      return balance;
+    },
+  };
 }
 
-const account1 = new BankAccount('Beka Tavkhelidze', 'USD');
-// account1.deposit(-111);
-console.log(account1.balance);
-account1.balance = 100;
+const myBank = bank();
+myBank.deposit(100);
+console.log(myBank.getBalance());
+myBank.withdraw(50);
+console.log(myBank.getBalance());
+myBank.withdraw(1000);
+console.log(myBank.getBalance());
