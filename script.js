@@ -1536,28 +1536,68 @@ function accum(s) {
 
 //! factory bank
 
-function bank() {
+// function bank() {
+//   let balance = 1000;
+//   return {
+//     deposit: function (amount) {
+//       if (amount > 0) return (balance += amount);
+//       throw new Error('invalid deposit number');
+//     },
+//     withdraw: function (amount) {
+//       if (amount < 0 || amount > balance)
+//         throw new Error('invalid withdraw amount');
+//       return (balance -= amount);
+//     },
+//     getBalance: () => {
+//       return balance;
+//     },
+//   };
+// }
+
+// const myBank = bank();
+// myBank.deposit(100);
+// console.log(myBank.getBalance());
+// myBank.withdraw(50);
+// console.log(myBank.getBalance());
+// myBank.withdraw(1000);
+// console.log(myBank.getBalance());
+
+//! construction function
+
+// function CreateCar(color, year) {
+//   (this.color = color),
+//     (this.year = year),
+//     (this.getAge = function () {
+//       return new Date().getFullYear() - year;
+//     });
+// }
+
+// const bmw = new CreateCar('BMW', 2020);
+// console.log(bmw.getAge());
+
+function Bank() {
   let balance = 1000;
-  return {
-    deposit: function (amount) {
-      if (amount > 0) return (balance += amount);
-      throw new Error('invalid deposit number');
-    },
-    withdraw: function (amount) {
-      if (amount < 0 || amount > balance)
-        throw new Error('invalid withdraw amount');
-      return (balance -= amount);
-    },
-    getBalance: () => {
+  this.deposit = function (amount) {
+    if (amount < 0) throw new Error('Invalid deposit Withdraw');
+    balance += amount;
+  };
+  this.withdraw = function (amount) {
+    if (amount < 0 || amount > balance)
+      throw new Error('Invalid withdraw amount');
+    balance -= amount;
+  };
+  Object.defineProperty(this, 'balance', {
+    get: function () {
       return balance;
     },
-  };
+    set: function (amount) {
+      console.log('what');
+    },
+  });
 }
 
-const myBank = bank();
-myBank.deposit(100);
-console.log(myBank.getBalance());
-myBank.withdraw(50);
-console.log(myBank.getBalance());
-myBank.withdraw(1000);
-console.log(myBank.getBalance());
+const myAccount = new Bank();
+myAccount.balance = 10;
+myAccount.deposit(100);
+myAccount.withdraw(1200);
+console.log(myAccount.balance);
