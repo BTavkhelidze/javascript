@@ -1575,29 +1575,146 @@ function accum(s) {
 // const bmw = new CreateCar('BMW', 2020);
 // console.log(bmw.getAge());
 
-function Bank() {
-  let balance = 1000;
-  this.deposit = function (amount) {
-    if (amount < 0) throw new Error('Invalid deposit Withdraw');
-    balance += amount;
-  };
-  this.withdraw = function (amount) {
-    if (amount < 0 || amount > balance)
-      throw new Error('Invalid withdraw amount');
-    balance -= amount;
-  };
-  Object.defineProperty(this, 'balance', {
-    get: function () {
-      return balance;
-    },
-    set: function (amount) {
-      console.log('what');
-    },
-  });
-}
+// function Bank() {
+//   let balance = 1000;
+//   this.deposit = function (amount) {
+//     if (amount < 0) throw new Error('Invalid deposit Withdraw');
+//     balance += amount;
+//   };
+//   this.withdraw = function (amount) {
+//     if (amount < 0 || amount > balance)
+//       throw new Error('Invalid withdraw amount');
+//     balance -= amount;
+//   };
+//   Object.defineProperty(this, 'balance', {
+//     get: function () {
+//       return balance;
+//     },
+//     set: function (amount) {
+//       console.log('what');
+//     },
+//   });
+// }
 
-const myAccount = new Bank();
-myAccount.balance = 10;
-myAccount.deposit(100);
-myAccount.withdraw(1200);
-console.log(myAccount.balance);
+// const myAccount = new Bank();
+// myAccount.balance = 10;
+// myAccount.deposit(100);
+// myAccount.withdraw(1200);
+// console.log(myAccount.balance);
+
+// var twoSum = function (nums, target) {
+//   let res = [];
+//   output: for (let i = 0; i < nums.length; i++) {
+//     for (let j = 0; j < nums.length; j++) {
+//       if (i !== j && nums[i] + nums[j] === target) {
+//         res.push(i);
+//         res.push(i);
+
+//         console.log(nums[i] + nums[j] === target);
+//         console.log(nums[i]);
+//         console.log(nums[j]);
+//         console.log(i);
+//         console.log(j);
+//         break output;
+//       }
+//     }
+//   }
+//   return res;
+// };
+
+// twoSum([3, 2, 4], 6);
+
+//! oop
+
+//!class
+
+// class Car {
+//   constructor(brand, year) {
+//     this.brand = brand;
+//     this.year = year;
+//   }
+
+//   start() {
+//     console.log(`The ${this.brand} car started`);
+//   }
+// }
+
+// const BMW = new Car('Bmw', 2016);
+// BMW.start();
+
+//! object
+
+// const car = {
+//   brand: 'BMW',
+//   year: 2016,
+//   start() {
+//     console.log(`THe ${this.brand} car started`);
+//   },
+// };
+
+// car.start();
+
+//! rectangle 1
+
+// class Rectangle {
+//   constructor(width, height) {
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   getArea() {
+//     console.log(`area is ${this.width * this.height}`);
+//   }
+// }
+
+// const ract1 = new Rectangle(4, 5);
+// ract1.getArea();
+
+//! calc 2
+// const calculator = {
+//   add(a, b) {
+//     console.log(a + b);
+//   },
+//   subtract(a, b) {
+//     console.log(a - b);
+//   },
+
+//   multiply(a, b) {
+//     console.log(a * b);
+//   },
+
+//   divide(a, b) {
+//     console.log(a / b);
+//   },
+// };
+
+// calculator.add(2, 4);
+// calculator.subtract(4, 2);
+
+// ! user 3
+
+// class User {
+//   constructor(name, email) {
+//     this.email = email;
+//     this.name = name;
+//   }
+
+//   getInfo() {
+//     console.log(`user ${this.name} has email ${this.email}`);
+//   }
+// }
+
+// const beka = new User('beka', 'bekaTav4Gmail.com');
+// beka.getInfo();
+
+// ! object 4
+
+const book = {
+  title: 'book title',
+  author: 'book author',
+  describe() {
+    console.log(`book ${this.title} is written by ${this.author}`);
+  },
+};
+
+book.describe();
