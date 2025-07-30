@@ -1721,16 +1721,34 @@ function accum(s) {
 
 // ! ენკაფსულაცია
 
-class Person {
-  #name;
-  constructor(name) {
-    this.#name = name;
+// class Person {
+//   #name;
+//   constructor(name) {
+//     this.#name = name;
+//   }
+
+//   get name() {
+//     return this.#name;
+//   }
+
+//   set name(input) {
+//     if (input.length < 3) throw new Error('Name too short');
+//     this.#name = input;
+//   }
+// }
+
+// const p = new Person('Beka');
+
+// ! account class
+
+class Account {
+  #password;
+  constructor(password) {
+    this.#password = password;
   }
 
-  get name() {
-    return this.#name;
+  checkPassword(input) {
+    if (input !== this.#password) return 'Invalid password';
+    return 'Correct password';
   }
 }
-
-const p = new Person('Beka');
-console.log(p.name);
