@@ -1709,12 +1709,28 @@ function accum(s) {
 
 // ! object 4
 
-const book = {
-  title: 'book title',
-  author: 'book author',
-  describe() {
-    console.log(`book ${this.title} is written by ${this.author}`);
-  },
-};
+// const book = {
+//   title: 'book title',
+//   author: 'book author',
+//   describe() {
+//     console.log(`book ${this.title} is written by ${this.author}`);
+//   },
+// };
 
-book.describe();
+// book.describe();
+
+// ! ენკაფსულაცია
+
+class Person {
+  #name;
+  constructor(name) {
+    this.#name = name;
+  }
+
+  get name() {
+    return this.#name;
+  }
+}
+
+const p = new Person('Beka');
+console.log(p.name);
