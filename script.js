@@ -1741,14 +1741,47 @@ function accum(s) {
 
 // ! account class
 
-class Account {
-  #password;
-  constructor(password) {
-    this.#password = password;
-  }
+// class Account {
+//   #password;
+//   constructor(password) {
+//     this.#password = password;
+//   }
 
-  checkPassword(input) {
-    if (input !== this.#password) return 'Invalid password';
-    return 'Correct password';
-  }
-}
+//   checkPassword(input) {
+//     if (input !== this.#password) return 'Invalid password';
+//     return 'Correct password';
+//   }
+// }
+
+// ! bank class
+
+// class BankAccount {
+//   #owner;
+
+//   #balance;
+//   constructor(owner, balance) {
+//     this.#owner = owner;
+//     this.#balance = balance;
+//   }
+
+//   get balance() {
+//     return this.#balance;
+//   }
+//   deposit(amount) {
+//     if (amount < 0) throw new Error('Invalid amount');
+//     this.#balance += amount;
+//   }
+
+//   withdraw(amount) {
+//     if (amount < 0) throw new Error('Invalid amount');
+//     if (amount > this.#balance) throw new Error('Insufficient funds');
+//     this.#balance -= amount;
+//   }
+// }
+
+// const acc = new BankAccount('Beka', 100);
+// acc.deposit(50);
+// acc.withdraw(30);
+// console.log(acc.balance); // → 120
+// acc.withdraw(20);
+// console.log(acc.balance); // → 120
