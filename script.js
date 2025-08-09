@@ -1785,3 +1785,170 @@ function accum(s) {
 // console.log(acc.balance); // → 120
 // acc.withdraw(20);
 // console.log(acc.balance); // → 120
+
+// ! inheritance
+
+// class Animal {
+//   constructor(name) {
+//     this.name = name;
+//   }
+
+//   speak() {
+//     return `${this.name} make a noise`;
+//   }
+// }
+
+// class Dog extends Animal {
+//   constructor(name, age) {
+//     super(name);
+//     this.age = age;
+//   }
+//   speak() {
+//     return `${this.name} barks, age: ${this.age}`;
+//   }
+// }
+
+// const Leqsi = new Dog('Leqsi', 5);
+// console.log(Leqsi.speak());
+
+// ! vehicle
+
+// class Vehicle {
+//   constructor(brand) {
+//     this.brand = brand;
+//   }
+
+//   describe() {
+//     return `This is a  vehicle from ${this.brand}`;
+//   }
+// }
+
+// class Car extends Vehicle {
+//   constructor(brand, model) {
+//     super(brand);
+//     this.model = model;
+//   }
+
+//   describe() {
+//     return `This is a ${this.model} from ${this.brand}`;
+//   }
+// }
+
+// const myCar = new Car('Toyota', 'Corolla');
+// console.log(myCar.describe());
+
+// ! Person
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   sayHello() {
+//     return `Hi, I'm ${this.name}`;
+//   }
+// }
+
+// class Student extends Person {
+//   constructor(name, university) {
+//     super(name);
+//     this.university = university;
+//   }
+//   sayHello() {
+//     return ` ${super.sayHello()} and I study at ${this.university} `;
+//   }
+// }
+// const anna = new Student('Anna', 'Tbilisi State University');
+// console.log(anna.sayHello());
+
+// ! class liberty book
+
+// class LibraryBook {
+//   #title;
+//   #autor;
+//   isAvailable = true;
+//   constructor(title, autor) {
+//     this.#title = title;
+//     this.#autor = autor;
+//   }
+
+//   getDetails() {
+//     return `Title ${this.#title}, Author: ${this.#autor}`;
+//   }
+
+//   borrowBook() {
+//     if (!this.isAvailable) {
+//       return `Book is not available`;
+//     }
+//     this.isAvailable = false;
+//     return 'You borrowed the book.';
+//   }
+
+//   returnBook() {
+//     if (this.isAvailable) return 'You cant return the book';
+//     this.isAvailable = true;
+//     return 'Thank you for returning the book.';
+//   }
+// }
+
+// const myBook = new LibraryBook('War and pease', 'Leo Tolstoy');
+// console.log(myBook.getDetails());
+// console.log(myBook.returnBook());
+// console.log(myBook.borrowBook());
+// console.log(myBook.returnBook());
+
+// ! oop class
+
+// class User {
+//   constructor(name, email) {
+//     this.name = name;
+//     this.email = email;
+//   }
+//   getInfo() {
+//     return `User: ${this.name}, Email: ${this.email}`;
+//   }
+// }
+
+// class Admin extends User {
+//   constructor(name, email, permissions) {
+//     super(name, email);
+//     this.permissions = permissions;
+//   }
+
+//   getInfo() {
+//     return `${super.getInfo()}, Permission: ${this.permissions}`;
+//   }
+// }
+
+// const Beka = new User('Beka', 'Beka@gamil.com');
+// console.log(Beka.getInfo());
+
+// const admin = new Admin('Beka', 'Beka@gamil.com', ['read', 'write', 'delete']);
+// console.log(admin.getInfo());
+
+// class CoffeeMachine {
+//   #boilWater() {
+//     console.log('Boiling water...');
+//   }
+//   #brawCoffe() {
+//     console.log('Brewing coffee...');
+//   }
+
+//   makeCoffee() {
+//     this.#boilWater();
+//     this.#brawCoffe();
+//     return 'Your coffee is ready!';
+//   }
+// }
+
+// const makeCoffee = new CoffeeMachine();
+
+var isPalindrome = function (x, y) {
+  // if(res !== x){
+  // return false
+  // }
+  //     return true
+
+  return [...x, ...y].sort((a, b) => a - b);
+};
+
+console.log(isPalindrome([1, 2], [2]));
