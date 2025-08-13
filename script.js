@@ -2031,3 +2031,36 @@ function accum(s) {
 // // // newArray.delete(1);
 
 // console.log(newArray);
+
+// function reverseString(str) {
+//   let reversedString = '';
+//   const splitText = str.split('');
+
+//   for (let i = splitText.length - 1; i >= 0; i--) {
+//     reversedString += splitText[i];
+//   }
+//   console.log(reversedString);
+// }
+
+// console.log(reverseString('Hi my name is Andrei'));
+
+// function reverseString(str) {
+//   const arr = [];
+
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     arr.push(str[i]);
+//   }
+//   return arr.join('');
+// }
+
+// console.log(reverseString('Hi my name is Andrei'));
+
+// function reverseString(str) {
+//   return str.split('').reverse().join('');
+// }
+
+// console.log(reverseString('Hi my name is Andrei'));
+
+// const reverseString = (str) => str.split('').reverse().join('');
+
+// console.log(reverseString('Hi my name is Andrei'));
