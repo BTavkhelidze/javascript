@@ -1942,13 +1942,92 @@ function accum(s) {
 
 // const makeCoffee = new CoffeeMachine();
 
-var isPalindrome = function (x, y) {
-  // if(res !== x){
-  // return false
-  // }
-  //     return true
+// var isPalindrome = function (x, y) {
+//   // if(res !== x){
+//   // return false
+//   // }
+//   //     return true
 
-  return [...x, ...y].sort((a, b) => a - b);
-};
+//   return [...x, ...y].sort((a, b) => a - b);
+// };
 
-console.log(isPalindrome([1, 2], [2]));
+// console.log(isPalindrome([1, 2], [2]));
+
+// class Car {
+//   constructor(brand, model, year) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.year = year;
+//   }
+//   drive() {
+//     console.log('Vroom!, Vroom!');
+//   }
+// }
+
+// class ElectricCar extends Car {
+//   constructor(brand, model, year, batteryCapacity) {
+//     super(brand, model, year);
+//     this.batteryCapacity = batteryCapacity;
+//   }
+
+//   drive() {
+//     console.log('click... silent drive');
+//   }
+
+//   charge() {
+//     console.log('Charging..., Done!');
+//   }
+// }
+
+// const Tesla = new ElectricCar('Tesla', 'xs', 2018, 84);
+
+// Tesla.charge();
+// Tesla.drive();
+
+// class Array {
+//   constructor() {
+//     this.length = 0;
+//     this.data = {};
+//   }
+//   push(item) {
+//     this.data[this.length] = item;
+//     this.length++;
+//   }
+
+//   pop() {
+//     if (this.length <= 0) {
+//       throw new Error('No element to remove');
+//     }
+//     delete this.data[this.length - 1];
+//     this.length--;
+//   }
+
+//   delete(index) {
+//     const item = this.data[index];
+//     this.shiftindex(index);
+//   }
+//   get(index) {
+//     return this.data[index];
+//   }
+
+//   shiftindex(item) {
+//     console.log(item);
+
+//     for (let i = item; i < this.length - 1; i++) {
+//       this.data[i] = this.data[i + 1];
+//     }
+//     delete this.data[this.length - 1];
+//     this.length--;
+//   }
+// }
+
+// const newArray = new Array();
+// newArray.push(1);
+// newArray.push(2);
+
+// newArray.push(3);
+// newArray.unshift(4);
+// // newArray.delete(0);
+// // // newArray.delete(1);
+
+// console.log(newArray);
