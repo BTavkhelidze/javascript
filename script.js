@@ -2179,19 +2179,97 @@ function accum(s) {
 
 //! revers Selection sort
 
-function reverseSort(arr) {
+// function reverseSort(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let maxIndex = i;
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[maxIndex] < arr[j]) {
+//         maxIndex = j;
+//       }
+//     }
+//     if (maxIndex !== i) {
+//       [arr[i], arr[maxIndex]] = [arr[maxIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(reverseSort([5, 2, 9, 1, 5, 6, 10]));
+
+//! selecteion sort
+
+// function sortArr(arr) {
+//   // let alpabet = ['a', 'b', 'o', 'm'];
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let minIndex = i;
+//     for (let j = i; j < arr.length; j++) {
+//       if (arr[j] > arr[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(sortArr([64, 25, 12, 22, 11]));
+
+// function sortArr(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let minIndex = i;
+//     for (let j = i; j < arr.length; j++) {
+//       if (arr[j].age < arr[minIndex].age) {
+//         minIndex = j;
+//       }
+//     }
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(
+//   sortArr([
+//     { name: 'Beka', age: 23 },
+//     { name: 'Avto', age: 25 },
+//     { name: 'Nino', age: 20 },
+//   ])
+// );
+// function selectionSortStrings(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let minIndex = i;
+
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[j] < arr[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+//   return arr;
+// }
+
+// // ტესტი
+// console.log(selectionSortStrings(['banana', 'apple', 'cherry', 'date']));
+
+//! bubble sort
+
+function sortArr(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    let maxIndex = i;
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[maxIndex] < arr[j]) {
-        maxIndex = j;
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
     }
-    if (maxIndex !== i) {
-      [arr[i], arr[maxIndex]] = [arr[maxIndex], arr[i]];
-    }
   }
+
   return arr;
 }
 
-console.log(reverseSort([5, 2, 9, 1, 5, 6, 10]));
+console.log(sortArr([64, 25, 12, 22, 11]));
