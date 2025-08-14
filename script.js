@@ -2064,3 +2064,134 @@ function accum(s) {
 // const reverseString = (str) => str.split('').reverse().join('');
 
 // console.log(reverseString('Hi my name is Andrei'));
+
+// const margeSortedArrys = (arr1, arr2) => [...arr1, ...arr2].sort((a,b) => a-b)
+
+// console.log(margeSortedArrys([0,3,4,41], [4,6,30]))
+
+// var maxProfit = function (prices) {
+//   var buyStock = prices[0];
+//   var sellStock = prices[0];
+//   var result = null;
+//   if (!result) {
+//     sellStock - buyStock;
+//   }
+//   for (var i = 0; i <= prices.length - 1; i++) {
+//     if (prices[i] < buyStock && i !== prices.length - 1) {
+//       buyStock = prices[i];
+//       sellStock = prices[i];
+//     }
+//     if (sellStock < prices[i]) {
+//       sellStock = prices[i];
+//       if (result < sellStock - buyStock) {
+//         result = sellStock - buyStock;
+//       }
+//       console.log(result);
+//     }
+//     console.log(result);
+//   }
+//   if (result > sellStock - buyStock) {
+//     return result;
+//   }
+//   console.log(result, 'res');
+//   if (buyStock === sellStock) {
+//     return 0;
+//   }
+
+//   return sellStock - buyStock;
+// };
+
+// // console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+// // console.log(maxProfit([7, 6, 4, 3, 1]));
+// // console.log(maxProfit([2, 4, 1]));
+// // console.log(maxProfit([2, 1, 2, 0, 1]));
+// // console.log(maxProfit([3, 2, 6, 5, 0, 3]));
+// // console.log(maxProfit([2, 1, 2, 1, 0, 1, 2]));
+// console.log(maxProfit([4, 7, 2, 1]));
+
+//! sort
+
+// function reverseArr(arr) {
+//   for (let i = 0; i < arr.length / 2; i++) {
+//     let firstEl = arr[i];
+//     arr[i] = arr[arr.length - i - 1];
+
+//     arr[arr.length - i - 1] = firstEl;
+//   }
+//   console.log(arr);
+// }
+
+// reverseArr([1, 2, 3, 4, 5]);
+
+//! remove duplicat
+
+// function removeDuplicates(arr) {
+//   return [...new Set(arr)];
+// }
+
+// console.log(removeDuplicates([1, 2, 3, 4, 4, 2, 5, 4, 5]));
+
+// ! move 0 to end
+
+// function moveZero(arr) {
+//   let noneZeroFoundAt = 0;
+
+//   let lastIndex = arr.length - 1;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i !== noneZeroFoundAt) {
+//       let lastEl = arr[noneZeroFoundAt];
+//       arr[noneZeroFoundAt] = arr[i];
+//       arr[i] = lastEl;
+//       noneZeroFoundAt++;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(moveZero([0, 1, 0, 3, 12]));
+
+// function reverseArr(arr) {
+//   for (let i = 0; i < arr.length / 2; i++) {
+//     [arr[i], arr[arr.length - i - 1]] = [arr[arr.length - i - 1], arr[i]];
+//   }
+//   console.log(arr);
+// }
+
+// reverseArr([1, 2, 3, 4, 5]);
+
+//! selection sort
+
+// function selectionSort(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let minIndex = i;
+//     for (let j = i + 1; j < arr.length; j++) {
+//       if (arr[j] < arr[minIndex]) {
+//         minIndex = j;
+//       }
+//     }
+//     if (minIndex !== i) {
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
+//     }
+//   }
+// }
+
+// selectionSort([64, 25, 12, 22, 11]);
+
+//! revers Selection sort
+
+function reverseSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let maxIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[maxIndex] < arr[j]) {
+        maxIndex = j;
+      }
+    }
+    if (maxIndex !== i) {
+      [arr[i], arr[maxIndex]] = [arr[maxIndex], arr[i]];
+    }
+  }
+  return arr;
+}
+
+console.log(reverseSort([5, 2, 9, 1, 5, 6, 10]));
